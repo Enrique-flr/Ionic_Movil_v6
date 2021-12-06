@@ -12,7 +12,10 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
- 
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
   {
     path: 'sigup',
     loadChildren: () => import('./sigup/sigup.module').then( m => m.SigupPageModule)
@@ -28,6 +31,10 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'cart-modal',
+    loadChildren: () => import('./cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
   },
 ];
 
